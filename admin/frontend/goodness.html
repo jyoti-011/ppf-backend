@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodness</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="homepage.html">
+            <div class="logo">
+                <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/Goodness.jpg" alt="Goodness Logo">
+        <h1>Goodness</h1>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Goodness/Chole%20Rice.jpeg" alt="Chole Rice">
+        <div class="food-details">
+            <h2>Chole with Rice</h2>
+            <p>₹70</p>
+            <button onclick="addToCart('Chole-Rice', 70)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Goodness/Rajma%20Rice.jpeg" alt="Rajma Rice">
+        <div class="food-details">
+            <h2>Rajma with Rice</h2>
+            <p>₹70</p>
+            <button onclick="addToCart('Rajma-Rice',70)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Goodness/Idli%20Sambahr.jpeg" alt="Idli Sambhr">
+        <div class="food-details">
+            <h2>Idli Sambhar</h2>
+            <p>₹50</p>
+            <button onclick="addToCart('Idli Sambhar', 140)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Goodness/Plain%20Dosa.jpeg" alt="Plain Dosa">
+        <div class="food-details">
+            <h2>Plain Dosa</h2>
+            <p>₹50</p>
+            <button onclick="addToCart('Plain Dosa', 50)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Goodness/Mysore%20Dosa.jpeg" alt="Mysore Dosa">
+        <div class="food-details">
+            <h2>Mysore Dosa</h2>
+            <p>₹70</p>
+            <button onclick="addToCart('Masala Dosa', 70)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="Asset/Goodness/Uttapam.jpeg" alt ="Uttapam">
+        <div class="food-details">
+            <h2>Uttapam</h2>
+            <p>₹70</p>
+            <button onclick="addToCart('Uttapam', 70)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Goodness/jini.jpeg" alt="Jini Dosa">
+        <div class="food-details">
+            <h2>Jini Dosa</h2>
+            <p>₹80</p>
+            <button onclick="addToCart('Jini Dosa', 80)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+</div>
+
+<!-- Payment Section -->
+<div class="payment-section" id="payment-section" style="display: none;">
+    <h2>Total Amount</h2>
+    <div class="total-amount" id="total-amount">₹0</div>
+    <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

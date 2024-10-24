@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Selection</title>
+    <link rel="stylesheet" href="greenzy-food-court.css">
+</head>
+<body>
+<div>
+    <header>
+        <div class="header-container">
+            <a href="homepage.html" class="logo-link">
+                <img src="Asset/ppf.jpg" alt="PU's Prepared Food Logo" class="logo">
+            </a>
+        </div>
+    </header>
+    <section class="food-court">
+        <div class="food-court-content">
+            <h1>Greenzy Food Court</h1>
+            <p>Welcome to Greenzy Food Court! Enjoy a variety of delicious foods from our top-rated vendors.</p>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <h1>Restaurants to explore</h1>
+
+    <div class="shop-box" onclick="openShop('ur_choice.html')">
+        <div class="shop-header">
+            <img src="Asset/urchoice.jpg" alt="Ur Choice Logo" class="shop-logo">
+            <h2>Ur Choice</h2>
+        </div>
+        <p>Outlet No. 5, Greenzy Food Court</p>
+        <p>Rating: ⭐⭐⭐⭐☆ (4.0)</p>
+    </div>
+
+
+
+    <div class="shop-box" onclick="openShop('The_Biryani_Hub.html')">
+        <div class="shop-header">
+            <img src="Asset/biryani.jpg" alt="The Biryani Hub Logo" class="shop-logo">
+            <h2>The Biryani Hub</h2>
+        </div>
+        <p>Outlet No. 2, Greenzy Food Court</p>
+        <p>Rating: ⭐⭐⭐⭐☆ (4.2)</p>
+    </div>
+
+    <div class="shop-box" onclick="openShop('Pahadi_Momos.html')">
+        <div class="shop-header">
+            <img src="Asset/pahadimomos.jpg" alt="Pahadi Hub Logo" class="shop-logo">
+            <h2>Pahadi Hub</h2>
+        </div>
+        <p>Outlet No. 1, Greenzy Food Court</p>
+        <p>Rating: ⭐⭐⭐⭐☆ (4.2)</p>
+    </div>
+
+</div>
+
+<script>
+    function openShop(shopUrl) {
+        window.location.href = shopUrl;
+    }
+</script>
+
+</body>
+</html>

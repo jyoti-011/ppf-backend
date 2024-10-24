@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="successful.css">
+</head>
+
+<body>
+<div class="success-container">
+    <h1>Payment Successful!</h1>
+    <h2>Your order has been placed successfully.</h2>
+    <p>Your order details:</p>
+    <div id="order-details">
+        <!-- Order details will be populated here by JavaScript -->
+    </div>
+    <button onclick="goToHomePage()">Go to Home</button>
+</div>
+<script>
+    window.onload = function() {
+        // Retrieve order summary and total amount from localStorage
+        const orderSummary = JSON.parse(localStorage.getItem('orderSummary')) || [];
+        const totalAmount = parseFloat(localStorage.getItem('orderTotal')) || 0;
+
+        const orderDetailsDiv = document.getElementById('order-details');
+        orderDetailsDiv.innerHTML = '';
+
+        orderSummary.forEach(cartItem => {
+            orderDetailsDiv.innerHTML += `
+                <div class="order-item">
+                    <span>${cartItem.item} - ₹${cartItem.price} x ${cartItem.quantity}</span>
+                </div>`;
+        });
+
+        orderDetailsDiv.innerHTML += `<h3>Total Amount: ₹${totalAmount.toFixed(2)}</h3>`;
+    };
+
+    function goToHomePage() {
+        // Clear localStorage or specific order data if necessary
+        localStorage.removeItem('orderSummary');
+        localStorage.removeItem('orderTotal');
+        window.location.href = 'index.html'; // Redirect to the home page
+    }
+</script>
+</body>
+</html>

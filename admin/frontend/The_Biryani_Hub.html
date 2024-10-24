@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Biryani Hub</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+        </div>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/biryani.jpg" alt="The Biryani Hub Logo">
+        <h1>The Biryani Hub</h1>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Biryani%20Hub/special%20Chicken%20Biryani.jpeg" alt="Special Chicken Biryani">
+        <div class="food-details">
+            <h2>Special Chicken Biryani</h2>
+            <p>₹130</p>
+            <button onclick="addToCart('Special Chicken Biryani', 130)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Biryani%20Hub/Shahi%20Biryani.jpeg" alt="Chicken Shahi Biryani">
+        <div class="food-details">
+            <h2>Chicken Shahi Biryani</h2>
+            <p>₹120</p>
+            <button onclick="addToCart('Chicken Shahi Biryani', 120)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Biryani%20Hub/Chicken%20Tikka%20Biryani.jpg" alt="Chicken Tikka Biryani">
+        <div class="food-details">
+            <h2>Chicken Tikka Biryani</h2>
+            <p>₹180</p>
+            <button onclick="addToCart('Chicken Tikka Biryani', 180)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Biryani%20Hub/ve%20Biryani.jpeg" alt="Veg Biryani">
+        <div class="food-details">
+            <h2>Veg Biryani</h2>
+            <p>₹90</p>
+            <button onclick="addToCart('Veg Biryani', 90)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Biryani%20Hub/tandoori%20chicke%20ntikka.jpeg" alt="Tandoor Chicken Tikka">
+        <div class="food-details">
+            <h2>Tandoor Chicken Tikka</h2>
+            <p>₹150</p>
+            <button onclick="addToCart('Tandoor Chicken Tikka', 150)">Add to Cart</button>
+        </div>
+    </div>
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+</div>
+<!-- Payment Section -->
+<div class="payment-section" id="payment-section" style="display: none;">
+    <h2>Total Amount</h2>
+    <div class="total-amount" id="total-amount">₹0</div>
+    <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

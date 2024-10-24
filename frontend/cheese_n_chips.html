@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheese n Chips</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="homepage.html">
+            <div class="logo">
+                <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/cheese.jpg" alt="Cheese n Chips Logo">
+        <h1>Cheese n Chips</h1>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/aloo%20tikki.jpeg" alt="Aloo Tikki Burger">
+        <div class="food-details">
+            <h2>Aloo Tikki Burger</h2>
+            <p>₹40</p>
+            <button onclick="addToCart('Aloo Tikki Burger', 40)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/Cheese%20burger.jpeg" alt="Cheese Burger">
+        <div class="food-details">
+            <h2>Cheese Burger</h2>
+            <p>₹60</p>
+            <button onclick="addToCart('Cheese Burger',60)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/Veg%20Sabdwich.webp" alt="Veg Sandwich">
+        <div class="food-details">
+            <h2>Veg Sandwich</h2>
+            <p>₹30</p>
+            <button onclick="addToCart('Veg Sandwich', 30)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/Bombay.jpeg" alt="Bombay Cheese Sandwich">
+        <div class="food-details">
+            <h2>Bombay Cheese Sandwich</h2>
+            <p>₹50</p>
+            <button onclick="addToCart('Bombay Cheese Sandwich', 50)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/Veg%20Frankie.jpeg" alt="Veg Frankie">
+        <div class="food-details">
+            <h2>Veg Frankie</h2>
+            <p>₹30</p>
+            <button onclick="addToCart('Veg Frankie', 30)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/peri%20peri.jpeg" alt="Peri Peri Fries">
+        <div class="food-details">
+            <h2>Peri Peri Fries</h2>
+            <p>₹80</p>
+            <button onclick="addToCart('Peri Peri Fries', 80)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Cheese%20n%20Chips/cheese%20fries.jpeg" alt="Cheese Fries">
+        <div class="food-details">
+            <h2>Cheese Fries</h2>
+            <p>₹100</p>
+            <button onclick="addToCart('Cheese Fries', 100)">Add to Cart</button>
+        </div>
+    </div>
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+</div>
+
+<!-- Payment Section -->
+<div class="payment-section" id="payment-section" style="display: none;">
+    <h2>Total Amount</h2>
+    <div class="total-amount" id="total-amount">₹0</div>
+    <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

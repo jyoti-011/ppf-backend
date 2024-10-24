@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-link {
+    display: inline-block;
+    margin: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ffcc00;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Food Court Section */
+.food-court {
+    padding: 40px 20px;
+    background-color: #e0f7fa; /* Light blue background for Greenzy Food Court */
+    text-align: center;
+}
+
+.food-court-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.food-court-content h1 {
+    margin-bottom: 20px;
+    color: #00796b; /* Darker shade of green */
+}
+
+.food-court-content p {
+    color: #555;
+}
+
+/* Container and Layout */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Shop Box */
+.shop-box {
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 2px solid #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.shop-box:hover {
+    background-color: #e7f1ff;
+    transform: scale(1.02);
+}
+
+/* Shop Header */
+.shop-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.shop-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #007BFF;
+}
+
+.shop-box h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #007BFF;
+}
+
+.shop-box p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Food Item */
+.food-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.food-details h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.food-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.food-details button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cart */
+.cart {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.cart-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+    background-color: #c82333;
+}

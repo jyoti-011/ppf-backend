@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Selection</title>
+    <link rel="stylesheet" href="greenzy-food-court.css">
+</head>
+<body>
+<div>
+    <header>
+        <div class="header-container">
+            <a href="homepage.html" class="logo-link">
+                <img src="Asset/ppf.jpg" alt="PU's Prepared Food Logo" class="logo">
+            </a>
+        </div>
+    </header>
+    <section class="food-court">
+        <div class="food-court-content">
+            <h1>Capitol Crust</h1>
+            <p>Welcome to Capitol Crust! Enjoy a variety of delicious foods from our top-rated vendors.</p>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <h1>Restaurants to explore</h1>
+
+    <div class="shop-box" onclick="openShop('wtf.html')">
+        <div class="shop-header">
+            <img src="Asset/wtf.jpg" alt="Where's The Food" class="shop-logo">
+            <h2>Where's The Food</h2>
+            </div>
+        <p>Where's The Food offers a delightful array of egg-based dishes </p>
+    </div>
+
+
+
+    <div class="shop-box" onclick="openShop('zaika_biryani.html')">
+        <div class="shop-header">
+            <img src="Asset/zaika.jpg" alt="Zaika Biryani Logo" class="shop-logo">
+            <h2>Zayaka Biryani</h2>
+        </div>
+<p>Zayaka Biryani offers a mouth-watering variety of flavorful Biryani, perfect for satisfying your cravings.</p>
+    </div>
+
+    <div class="shop-box" onclick="openShop('cheese_n_chips.html')">
+        <div class="shop-header">
+            <img src="Asset/cheese.jpg" alt="Cheese n Chips" class="shop-logo">
+            <h2>Cheese n Chips</h2>
+        </div>
+        <p>Cheese n Chips serves a delicious range of cheesy delights  perfect for those who love cheesy, savory treats.</p>
+    </div>
+
+</div>
+
+<script>
+    function openShop(shopUrl) {
+        window.location.href = shopUrl;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ur Choice</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+    <link rel="stylesheet" href="payment.css"> <!-- Link to separate CSS for payment button -->
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+        </div>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/urchoice.jpg" alt="Pahadi Momos Logo">
+        <h1>Ur Choice</h1>
+    </div>
+
+    <!-- Food items -->
+    <div class="food-item">
+        <img src="Asset/Ur%20Choice/veg%20puff.jpg" alt="Veg Butter Puff">
+        <div class="food-details">
+            <h2>Veg Butter Puff</h2>
+            <p>₹20</p>
+            <button onclick="addToCart('Veg Butter Puff', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Ur%20Choice/cheese%20puff.jpg" alt="Cheese Puff">
+        <div class="food-details">
+            <h2>Cheese Puff</h2>
+            <p>₹30</p>
+            <button onclick="addToCart('Cheese Puff', 30)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Ur%20Choice/paneer%20bhurji.jpg" alt="Paneer Bhurji Roll">
+        <div class="food-details">
+            <h2>Paneer Bhurji Roll</h2>
+            <p>₹40</p>
+            <button onclick="addToCart('Paneer Bhurji Roll', 40)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- More food items... -->
+
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section" id="payment-section" style="display: none;">
+        <h2>Total Amount</h2>
+        <div class="total-amount" id="total-amount">₹0</div>
+        <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

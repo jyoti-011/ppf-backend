@@ -1,0 +1,78 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Management Options Section */
+.management-options {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.option-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.option-box:hover {
+    transform: scale(1.05); /* Enlarge on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+.option-box h2 {
+    font-size: 1.8em;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.option-box p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .management-options {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .option-box {
+        width: 100%;
+    }
+}

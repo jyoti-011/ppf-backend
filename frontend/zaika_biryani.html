@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaika Biryani</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="homepage.html">
+        <div class="logo">
+            <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+        </div>
+        </a>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/zaika.jpg" alt="Zaika Logo">
+        <h1>Zaika Biryani</h1>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Zaika/Chicken%20Lolipop.jpeg" alt="Chicken Lollipop">
+        <div class="food-details">
+            <h2>Chicken Lollipop</h2>
+            <p>₹150</p>
+            <button onclick="addToCart('Chicken Lollipop', 150)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Zaika/chichen%2065.jpeg" alt="Chicken 65">
+        <div class="food-details">
+            <h2>Chicken 65</h2>
+            <p>₹120</p>
+            <button onclick="addToCart('Chicken 65',120)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Zaika/Chicken%20Wings.jpeg" alt="Chicken Wings">
+        <div class="food-details">
+            <h2>Chicken Wings</h2>
+            <p>₹130</p>
+            <button onclick="addToCart('Chicken Wings', 60)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Zaika/Hyderabadi.jpeg" alt="Hyderabadi Chicken Biryani">
+        <div class="food-details">
+            <h2>Hyderabadi Chicken Biryani</h2>
+            <p>₹130</p>
+            <button onclick="addToCart('Hyderabadi Chicken Biryani', 130)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Zaika/zaika%20specail.jpeg" alt="Sp. Zaika Biryani">
+        <div class="food-details">
+            <h2>Special Zaika Biryani</h2>
+            <p>₹200</p>
+            <button onclick="addToCart('Special Zaika Biryani', 200)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+</div>
+
+<!-- Payment Section -->
+<div class="payment-section" id="payment-section" style="display: none;">
+    <h2>Total Amount</h2>
+    <div class="total-amount" id="total-amount">₹0</div>
+    <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

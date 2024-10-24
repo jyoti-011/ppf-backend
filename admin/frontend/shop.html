@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shop.css">
+    <title>User Profile - PU's Prepared Food</title>
+</head>
+
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html"><img src="/Asset/ppf.jpg" alt="Logo"></a>
+        </div>
+        <div class="title">PU's Prepared Food</div>
+        <div class="profile-section">
+            <i class="fa-solid fa-cart-shopping" id="cart"></i>
+            <img class="profile-pic-header" src="/Asset/profile-pic.png" alt="Profile Picture" id="profile-pic">
+            <span id="header-username" class="user-name"></span> <!-- Added an ID to this span -->
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+    <section class="greeting-section">
+        <div class="greeting-card" id="greeting">
+            <h2>Welcome <span id="username"></span>!</h2> <!-- Will be updated dynamically -->
+            <p>Feeling hungry?</p>
+            <p>🌟 Dive into a world of flavors with PU's Prepared Food! 🌟</p>
+            <p>Your one-stop solution for deliciousness awaits you. Explore our vibrant Food Courts and savor the best
+                dishes in town.</p>
+            <p>Bon appétit and enjoy your culinary journey!</p>
+        </div>
+    </section>
+</div>
+
+<!-- Food Courts Section -->
+<div class="food-courts">
+    <div class="food-court-card">
+        <a href="greenzy-food-court.html">
+            <img src="/Asset/Greenzy.jpg" alt="Greenzy Food Court">
+            <div class="card-overlay">
+                <h3>Greenzy Food Court</h3>
+            </div>
+        </a>
+    </div>
+    <div class="food-court-card">
+        <a href="new-food-court.html">
+            <img src="/Asset/New%20Food%20Court%20(1).jpg" alt="New Food Court">
+            <div class="card-overlay">
+                <h3>New Food Court</h3>
+            </div>
+        </a>
+    </div>
+    <div class="food-court-card">
+        <a href="capitol-food-court.html">
+            <img src="/Asset/Capitol%20(2).jpg" alt="Capitol Food Court">
+            <div class="card-overlay">
+                <h3>Capitol Food Court</h3>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>PU's Prepared Food is your go-to platform for discovering the best food courts in your city. Enjoy exclusive
+        deals and discover new flavors every day!</p>
+</footer>
+
+<script>
+    // Fetch user profile data
+    window.onload = async function() {
+        try {
+            const response = await fetch('/auth/shop/profile', {
+                method: 'GET',
+                credentials: 'include', // Send cookies with request
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Update the username in the greeting and header
+                document.getElementById('username').innerText = data.user.username; // Main content
+                document.getElementById('header-username').innerText = data.user.username; // Header content
+            } else {
+                alert('Error fetching profile: ' + data.message);
+                window.location.href = '/shop-login.html'; // Redirect to login if not authenticated
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    };
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PU's Prepared Food</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="auth-container">
+    <div class="auth-header">
+        <a href="index.html" class="logo-link">
+            <img src="ppf.jpg" alt="PU's Prepared Food Logo" class="logo">
+        </a>
+        <h2>Login</h2>
+    </div>
+    <div class="auth-form">
+        <form id="login-form"> <!-- Updated form ID to match in JS -->
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" required> <!-- Updated IDs -->
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" required> <!-- Updated IDs -->
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Add event listener to the login form
+    document.getElementById('login-form').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Retrieve the email and password input values
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        try {
+            // Send a POST request to the server with the email and password
+            const response = await fetch('/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }), // Send email and password as JSON
+            });
+
+            const data = await response.json(); // Parse the response JSON
+
+            if (response.ok) {
+                // If login is successful, redirect to the user.html page with the username
+                window.location.href = `user.html?username=${encodeURIComponent(data.username)}`;
+            } else {
+                // Display an alert if login failed
+                alert(data.message);
+            }
+        } catch (error) {
+            // Catch and display any network or unexpected errors
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+</script>
+</body>
+</html>

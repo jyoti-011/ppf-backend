@@ -1,0 +1,129 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4; /* Slightly lighter background for a modern look */
+    margin: 0;
+    padding: 0;
+}
+
+.payment-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px; /* More rounded corners for a modern feel */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+.payment-container h1 {
+    text-align: center;
+    color: #333;
+    font-weight: 600; /* Bolder font for emphasis */
+}
+
+.payment-summary, .payment-options {
+    margin-bottom: 20px;
+    padding: 10px 20px; /* Adding padding for a more spacious feel */
+    border: 1px solid #e0e0e0; /* Light border for section separation */
+    border-radius: 8px; /* Rounded corners for sections */
+    background: #fafafa; /* Slightly shaded background for contrast */
+}
+
+.payment-summary h2, .payment-options h2 {
+    font-size: 20px; /* Increased size for headings */
+    color: #555;
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.total-amount {
+    font-size: 24px; /* Larger font size for the total amount */
+    font-weight: bold;
+    margin-top: 10px;
+    color: #e91e63; /* Color to highlight the total amount */
+}
+
+.payment-options {
+    display: flex; /* Use flexbox to align buttons side by side */
+    justify-content: space-between; /* Space out the buttons evenly */
+}
+
+.payment-options button {
+    flex: 1; /* Allow buttons to grow equally */
+    margin: 0 5px; /* Add horizontal margin between buttons */
+    color: #fff;
+    border: none;
+    padding: 12px 0; /* Increased padding for better touch area */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s; /* Transition effects */
+}
+
+/* Pay with UPI button styling */
+.button-upi {
+    background-color: #4CAF50; /* Greenish color for Pay with UPI */
+}
+
+.button-upi:hover {
+    background-color: #45a049; /* Darker shade on hover for UPI */
+}
+
+/* Pay with Wallet button styling */
+.button-wallet {
+    background-color: #FFC107; /* Yellowish color for Pay with Wallet */
+}
+
+.button-wallet:hover {
+    background-color: #e0a800; /* Darker shade on hover for Wallet */
+}
+
+.timer {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500; /* Medium weight for better readability */
+}
+
+.cancel-button {
+    background-color: #dc3545; /* Red color for Cancel */
+    transition: background-color 0.3s, transform 0.1s; /* Transition effects */
+}
+
+.cancel-button:hover {
+    background-color: #c82333; /* Darker shade on hover for Cancel */
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+/* Media query for responsive design */
+@media (max-width: 600px) {
+    .payment-container {
+        padding: 15px; /* Reduced padding on smaller screens */
+    }
+
+    .payment-options button {
+        font-size: 14px; /* Slightly smaller buttons on smaller screens */
+    }
+}
+/* Add this section to your existing CSS */
+
+.wallet-balance {
+    margin-bottom: 20px;
+    padding: 10px 20px; /* Add padding for a more spacious feel */
+    border: 1px solid #e0e0e0; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners for sections */
+    background: #fafafa; /* Slightly shaded background for contrast */
+    text-align: center; /* Center text */
+}
+
+.wallet-balance h2 {
+    font-size: 20px; /* Increased size for heading */
+    color: #555;
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.wallet-balance p {
+    font-size: 24px; /* Larger font size for wallet balance */
+    font-weight: bold;
+    color: #4CAF50; /* Greenish color to highlight balance */
+}

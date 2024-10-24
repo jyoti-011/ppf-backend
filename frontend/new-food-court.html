@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Food Court</title>
+    <link rel="stylesheet" href="greenzy-food-court.css">
+</head>
+<body>
+<div>
+    <header>
+        <div class="header-container">
+            <a href="homepage.html" class="logo-link">
+                <img src="Asset/ppf.jpg" alt="PU's Prepared Food Logo" class="logo">
+            </a>
+        </div>
+    </header>
+    <section class="food-court">
+        <div class="food-court-content">
+            <h1>New Food Court</h1>
+            <p>Welcome to New Food Court! Enjoy a variety of delicious foods from our top-rated vendors.</p>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <h1>Restaurants to explore</h1>
+
+    <div class="shop-box" onclick="openShop('messy_bowl.html')">
+        <div class="shop-header">
+            <img src="Asset/Messy%20Bowl.jpg" alt="Messy Bowl" class="shop-logo">
+            <h2>Messy Bowl</h2>
+        </div>
+        <p>Specializes in serving up a variety of delicious Maggi noodles, perfect for satisfying your noodle cravings</p>
+    </div>
+
+
+
+    <div class="shop-box" onclick="openShop('Wok_and_chops.html')">
+        <div class="shop-header">
+            <img src="Asset/wok%20and%20chops.jpg" alt="Wok and Chops Logo" class="shop-logo">
+            <h2>Wok & Chops</h2>
+        </div>
+<p> Pan Asian Foods that satisfy all your craving for chinese</p>
+    </div>
+
+    <div class="shop-box" onclick="openShop('goodness.html')">
+        <div class="shop-header">
+            <img src="Asset/Goodness.jpg" alt="Goodness" class="shop-logo">
+            <h2>Goodness</h2>
+        </div>
+        <p>offers authentic Indian and South Indian traditional dishes bringing the rich flavors of India to every meal.</p>
+    </div>
+
+</div>
+
+<script>
+    function openShop(shopUrl) {
+        window.location.href = shopUrl;
+    }
+</script>
+
+</body>
+</html>

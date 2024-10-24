@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wok & Chops</title>
+    <link rel="stylesheet" href="greenzy_shop.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="homepage.html">
+            <div class="logo">
+                <img class="logo-img" src="Asset/ppf.jpg" alt="PU's Prepared Food">
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="header-icons">
+            <a href="#" class="icon-link">
+                <img class="icon-img" src="Asset/cart%20icon.png" alt="Cart">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="shop-name-block">
+        <img class="logo-img" src="Asset/wok%20and%20chops.jpg" alt="Wok and Chops Logo">
+        <h1>Wok & Chops</h1>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Swwet%20corn%20soup.jpeg" alt="Sweet Corn Soup">
+        <div class="food-details">
+            <h2>Veg Sweet Corn Soup</h2>
+            <p>₹119</p>
+            <button onclick="addToCart('Veg Sweet Corn Soup', 119)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Manchow.jpeg" alt="Manchow Soup">
+        <div class="food-details">
+            <h2>Machow Soup</h2>
+            <p>₹119</p>
+            <button onclick="addToCart('Manvhow Soup',119)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Veg%20Manchurian.jpeg" alt="Manchurian Dry">
+        <div class="food-details">
+            <h2>Veg Manchurian Dry</h2>
+            <p>₹169</p>
+            <button onclick="addToCart('Veg Manchurian Dry', 169)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Spring%20Roll.jpeg" alt="Spring Roll">
+        <div class="food-details">
+            <h2>Spring Roll</h2>
+            <p>₹179</p>
+            <button onclick="addToCart('Spring Roll', 179)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/paneer%20chilly.jpeg" alt="Paneer Chilly">
+        <div class="food-details">
+            <h2>Paneer Chilly Dry</h2>
+            <p>₹189</p>
+            <button onclick="addToCart('Paneer Chilly Dry', 189)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Sesame%20Chicken.jpeg" alt="Sesame Chicken">
+        <div class="food-details">
+            <h2>Sesame Chicken</h2>
+            <p>₹239</p>
+            <button onclick="addToCart('Sesame Chicken', 239)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="Asset/Wok_Cops/Chilly%20Chicken.jpeg" alt="Chilly Chicken">
+        <div class="food-details">
+            <h2>Chilly Chicken</h2>
+            <p>₹239</p>
+            <button onclick="addToCart('Chilly Chicken', 239)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Your Cart</h2>
+    <div class="cart" id="cart">
+        <p>No items in cart</p>
+    </div>
+</div>
+
+<!-- Payment Section -->
+<div class="payment-section" id="payment-section" style="display: none;">
+    <h2>Total Amount</h2>
+    <div class="total-amount" id="total-amount">₹0</div>
+    <button class="payment-button" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+<script src="Add_to_cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PU's Prepared Food</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="auth-container">
+    <div class="auth-header">
+        <a href="index.html" class="logo-link">
+            <img src="ppf.jpg" alt="PU's Prepared Food Logo" class="logo">
+        </a>
+        <h2>Sign Up</h2>
+    </div>
+    <div class="auth-form">
+        <form id="signup-form" method="post" action="/">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="username" required>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" required>
+            <label for="signup-phone">Phone</label>
+            <input type="tel" id="signup-phone" name="phone" required>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" required>
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Add event listener to the signup form
+    document.getElementById('signup-form').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Retrieve input values
+        const username = document.getElementById('signup-name').value;
+        const email = document.getElementById('signup-email').value;
+        const phone = document.getElementById('signup-phone').value;
+        const password = document.getElementById('signup-password').value;
+
+        try {
+            // Send POST request to the server with the form data
+            const response = await fetch('/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, email, phone, password }), // Send data as JSON
+            });
+
+            const data = await response.json(); // Parse response JSON
+
+            // Display message
+            alert(data.message);
+
+            // If signup is successful, redirect to login page
+            if (response.ok) {
+                window.location.href = 'login.html';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+</script>
+</body>
+</html>

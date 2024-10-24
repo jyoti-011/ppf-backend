@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+
+<body>
+<div class="payment-container">
+    <h1>Complete Your Payment</h1>
+    <div class="payment-summary">
+        <h2>Order Summary</h2>
+        <div id="order-summary">
+            <!-- Order details will be populated here by JavaScript -->
+        </div>
+        <div class="total-amount">
+            <p>Total Amount: <span id="total-amount">0</span></p>
+        </div>
+    </div>
+
+    <!-- Wallet Balance Section -->
+    <div class="wallet-balance">
+        <h2>Current Wallet Balance</h2>
+        <p id="current-wallet-balance">₹0.00</p> <!-- This will be updated dynamically with JavaScript -->
+    </div>
+
+    <div class="payment-options">
+        <h2>Select Payment Method</h2>
+        <button class="button-upi" id="upi-payment">Pay with UPI</button>
+        <button class="button-wallet" id="wallet-payment">Pay with Wallet</button>
+    </div>
+
+    <div class="timer">
+        <p>Payment expires in: <span id="countdown">05:00</span></p>
+    </div>
+
+    <button class="cancel-button" id="cancel-payment">Cancel Payment</button>
+</div>
+<script src="Payment.js"></script>
+<script>
+    // For testing purposes only: Set sample data in localStorage
+    localStorage.setItem('walletBalance', '800.00'); // Set a sample wallet balance
+    localStorage.setItem('orderSummary', JSON.stringify([{ item: 'Food Item', price: 50, quantity: 1 }])); // Sample order summary
+    localStorage.setItem('totalAmount', '50.00'); // Set a sample total amount
+
+    // Retrieve wallet balance from localStorage and display it
+    const walletBalance = localStorage.getItem('walletBalance') || 0;
+    document.getElementById('current-wallet-balance').innerText = `₹${walletBalance}`;
+
+    // Retrieve and display order summary and total amount from localStorage
+    const orderSummary = JSON.parse(localStorage.getItem('orderSummary')) || [];
+    const totalAmount = localStorage.getItem('totalAmount') || '0';
+
+    const orderSummaryDiv = document.getElementById('order-summary');
+    orderSummaryDiv.innerHTML = '';
+
+    if (orderSummary.length === 0) {
+        orderSummaryDiv.innerHTML = 'No items in cart';
+    } else {
+        orderSummary.forEach(cartItem => {
+            orderSummaryDiv.innerHTML += `
+                <div class="cart-item">
+                    <span>${cartItem.item} - ₹${cartItem.price} x ${cartItem.quantity}</span>
+                </div>`;
+        });
+    }
+
+    document.getElementById('total-amount').textContent = `₹${totalAmount}`;
+
+    // Function to start the countdown timer
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+        const interval = setInterval(() => {
+            minutes = Math.floor(timer / 60);
+            seconds = timer % 60;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = `${minutes}:${seconds}`;
+
+            // If the timer runs out
+            if (--timer < 0) {
+                clearInterval(interval);
+                alert('Payment time expired!');
+                window.location.href = 'index.html'; // Redirect to home page or another page
+            }
+        }, 1000);
+    }
+
+    // Window onload event to initialize the countdown
+    window.onload = function () {
+        const fiveMinutes = 60 * 5; // Set timer duration (5 minutes)
+        const display = document.querySelector('#countdown');
+        startTimer(fiveMinutes, display);
+    };
+
+    // Function to handle UPI payment
+    document.getElementById('upi-payment').addEventListener('click', makeUPIPayment);
+    
+    function makeUPIPayment() {
+        // Redirect to UPI payment page or handle payment logic
+        window.location.href = 'https://www.phonepe.com/'; // Replace with actual UPI payment URL
+    }
+
+    // Function to handle wallet payment
+    document.getElementById('wallet-payment').addEventListener('click', makeWalletPayment);
+    
+    async function makeWalletPayment() {
+        const totalAmount = parseFloat(document.getElementById('total-amount').innerText.replace('₹', '').trim());
+        let walletBalance = parseFloat(localStorage.getItem('walletBalance')) || 0;
+
+        // Check if the wallet balance is sufficient
+        if (totalAmount <= walletBalance) {
+            // Deduct the total amount from the wallet balance
+            walletBalance -= totalAmount;
+
+            // Update the wallet balance in localStorage
+            localStorage.setItem('walletBalance', walletBalance.toFixed(2));
+
+            // Store order summary and total amount in localStorage for the success page
+            localStorage.setItem('orderSummary', JSON.stringify(orderSummary));
+            localStorage.setItem('orderTotal', totalAmount.toFixed(2)); // Store total amount for success page
+
+            // Send order details to shop
+            const orderDetails = {
+                user: 'User Name', // Replace with actual user data
+                foodItems: orderSummary,
+                totalAmount: totalAmount,
+                shop: 'Ur Choice'
+            };
+            sendOrderToShop(orderDetails);
+
+            // Redirect to the order success page
+            window.location.href = 'successful.html'; // Redirect to an order success page
+        } else {
+            alert("Insufficient wallet balance. Please add funds to your wallet or choose a different payment method.");
+        }
+    }
+
+    function sendOrderToShop(orderDetails) {
+        fetch('http://shop-website.com/api/order-receive', { // Replace with the actual shop's API endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails) // Sending order details to the shop
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Order sent to shop:', data);
+            alert('Your order has been sent to the shop for processing!');
+        })
+        .catch(error => {
+            console.error('Error sending order:', error);
+        });
+    }
+
+    // Function to cancel the payment
+    document.getElementById('cancel-payment').addEventListener('click', cancelPayment);
+    
+    function cancelPayment() {
+        // Confirm before redirecting
+        if (confirm('Are you sure you want to cancel the payment?')) {
+            window.location.href = 'user.html'; // Redirect to home page or order page
+        }
+    }
+</script>
+</body>
+</html>
